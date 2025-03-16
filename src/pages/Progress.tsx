@@ -4,7 +4,7 @@ import Layout from '@/components/Layout';
 import { getUserProgress, moduleData } from '@/data/vocabularyData';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Award, Book, Calendar, Flame, ChevronUp } from 'lucide-react';
-import { Progress } from "@/components/ui/progress";
+import { Progress as ProgressBar } from "@/components/ui/progress";
 import { 
   BarChart, 
   Bar, 
@@ -15,7 +15,7 @@ import {
   Tooltip
 } from "recharts";
 
-const Progress = () => {
+const ProgressPage = () => {
   const userProgress = getUserProgress();
   
   // Fake activity data for the chart
@@ -196,10 +196,8 @@ const Progress = () => {
                       <span className="text-sm text-gray-500">{category.learned}/{category.total}</span>
                     </div>
                     <div className="flex items-center">
-                      <Progress 
-                        value={category.percentage} 
+                      <ProgressBar 
                         className="h-2 flex-grow mr-2" 
-                        style={{'--progress-width': `${category.percentage}%`} as React.CSSProperties}
                       />
                       <span className="text-xs font-medium w-8 text-right">
                         {category.percentage}%
@@ -249,4 +247,4 @@ const Progress = () => {
   );
 };
 
-export default Progress;
+export default ProgressPage;
