@@ -10,7 +10,7 @@ const Header = () => {
         <div className="flex items-center">
           <BookOpen className="h-6 w-6 mr-2 text-corporate-gold" />
           <Link to="/" className="text-xl font-montserrat font-bold">
-            Corporate<span className="text-corporate-gold">Vocab</span>Master
+            CorVo<span className="text-corporate-gold">Master</span>
           </Link>
         </div>
         

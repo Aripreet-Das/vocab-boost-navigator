@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="flex items-center mb-4 md:mb-0">
             <BookOpen className="h-5 w-5 mr-2 text-corporate-gold" />
             <span className="text-lg font-montserrat font-bold">
-              Corporate<span className="text-corporate-gold">Vocab</span>Master
+              CorVo<span className="text-corporate-gold">Master</span>
             </span>
           </div>
           
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <p className="text-sm text-gray-400">© 2023 CorporateVocabMaster. All rights reserved.</p>
+            <p className="text-sm text-gray-400">© 2023 CorVoMaster. All rights reserved.</p>
           </div>
         </div>
       </div>
