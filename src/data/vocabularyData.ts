@@ -1,4 +1,3 @@
-
 export type WordCategory = 
   | 'leadership' 
   | 'finance' 
@@ -28,6 +27,8 @@ export interface Module {
   imageIcon: string;
   progress: number;
   color: string;
+  isPremium: boolean;
+  price?: number;
 }
 
 export const wordData: Word[] = [
@@ -146,13 +147,14 @@ export const wordData: Word[] = [
 export const moduleData: Module[] = [
   {
     id: 'module-001',
-    title: 'Leadership Lexicon',
+    title: 'Basic Corporate Vocab',
     description: 'Master the vocabulary of effective leadership and management',
     category: 'leadership',
     totalWords: 25,
     imageIcon: 'briefcase',
     progress: 20,
-    color: 'bg-blue-600'
+    color: 'bg-blue-600',
+    isPremium: false
   },
   {
     id: 'module-002',
@@ -162,7 +164,9 @@ export const moduleData: Module[] = [
     totalWords: 30,
     imageIcon: 'line-chart',
     progress: 10,
-    color: 'bg-green-600'
+    color: 'bg-green-600',
+    isPremium: true,
+    price: 19.99
   },
   {
     id: 'module-003',
@@ -172,7 +176,9 @@ export const moduleData: Module[] = [
     totalWords: 20,
     imageIcon: 'megaphone',
     progress: 5,
-    color: 'bg-purple-600'
+    color: 'bg-purple-600',
+    isPremium: true,
+    price: 24.99
   },
   {
     id: 'module-004',
@@ -182,7 +188,9 @@ export const moduleData: Module[] = [
     totalWords: 15,
     imageIcon: 'handshake',
     progress: 0,
-    color: 'bg-amber-600'
+    color: 'bg-amber-600',
+    isPremium: true,
+    price: 29.99
   },
   {
     id: 'module-005',
@@ -192,7 +200,9 @@ export const moduleData: Module[] = [
     totalWords: 20,
     imageIcon: 'clipboard-list',
     progress: 3,
-    color: 'bg-cyan-600'
+    color: 'bg-cyan-600',
+    isPremium: true,
+    price: 19.99
   },
   {
     id: 'module-006',
@@ -202,7 +212,9 @@ export const moduleData: Module[] = [
     totalWords: 18,
     imageIcon: 'users',
     progress: 0,
-    color: 'bg-pink-600'
+    color: 'bg-pink-600',
+    isPremium: true,
+    price: 24.99
   }
 ];
 
