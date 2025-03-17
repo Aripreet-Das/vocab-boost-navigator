@@ -8,9 +8,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { User, Mail, Home, Briefcase, GraduationCap, Edit, Save } from 'lucide-react';
+import { User, Mail, Home, Briefcase, GraduationCap, Edit, Save, LogOut, Sun, Moon } from 'lucide-react';
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { Switch } from "@/components/ui/switch";
+import { useTheme } from "next-themes";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+import { useNavigate } from "react-router-dom";
 
 interface ProfileFormValues {
   name: string;
@@ -24,6 +28,8 @@ interface ProfileFormValues {
 const ProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const navigate = useNavigate();
 
   // Initialize form with default values or stored values
   const form = useForm<ProfileFormValues>({
@@ -54,6 +60,23 @@ const ProfilePage = () => {
     // Show success message and exit edit mode
     toast.success("Profile updated successfully!");
     setIsEditing(false);
+  };
+
+  const handleLogout = () => {
+    // Clear all local storage data
+    localStorage.removeItem('userProfile');
+    localStorage.removeItem('cart');
+    
+    // Show success message
+    toast.success("Successfully logged out");
+    
+    // Navigate to home page
+    navigate("/");
+  };
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+    toast.success(`Switched to ${theme === "dark" ? "light" : "dark"} mode`);
   };
 
   // User profile is still loading
@@ -107,7 +130,7 @@ const ProfilePage = () => {
                   {form.watch('job') || 'Your Profession'}
                 </p>
               </CardHeader>
-              <CardContent className="pt-4">
+              <CardContent className="pt-4 space-y-4">
                 <Button 
                   onClick={() => setIsEditing(!isEditing)}
                   className="w-full bg-corporate-gold hover:bg-corporate-gold/90 text-white"
@@ -124,6 +147,46 @@ const ProfilePage = () => {
                     </>
                   )}
                 </Button>
+                
+                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-md">
+                  <div className="flex items-center">
+                    {theme === "dark" ? (
+                      <Moon className="h-4 w-4 mr-2 text-corporate-navy" />
+                    ) : (
+                      <Sun className="h-4 w-4 mr-2 text-corporate-gold" />
+                    )}
+                    <span className="text-sm font-medium">Dark Mode</span>
+                  </div>
+                  <Switch 
+                    checked={theme === "dark"}
+                    onCheckedChange={toggleTheme}
+                  />
+                </div>
+                
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button 
+                      variant="destructive" 
+                      className="w-full"
+                    >
+                      <LogOut className="mr-2 h-4 w-4" />
+                      Log Out
+                    </Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Are you sure you want to log out?</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        This will erase all your profile data and cart items. 
+                        This action cannot be undone.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction onClick={handleLogout}>Log Out</AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               </CardContent>
             </Card>
           </div>

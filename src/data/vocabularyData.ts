@@ -166,7 +166,7 @@ export const moduleData: Module[] = [
     progress: 10,
     color: 'bg-green-600',
     isPremium: true,
-    price: 19.99
+    price: 12.99
   },
   {
     id: 'module-003',
@@ -178,7 +178,7 @@ export const moduleData: Module[] = [
     progress: 5,
     color: 'bg-purple-600',
     isPremium: true,
-    price: 24.99
+    price: 14.99
   },
   {
     id: 'module-004',
@@ -190,7 +190,7 @@ export const moduleData: Module[] = [
     progress: 0,
     color: 'bg-amber-600',
     isPremium: true,
-    price: 29.99
+    price: 13.99
   },
   {
     id: 'module-005',
@@ -202,7 +202,7 @@ export const moduleData: Module[] = [
     progress: 3,
     color: 'bg-cyan-600',
     isPremium: true,
-    price: 19.99
+    price: 11.99
   },
   {
     id: 'module-006',
@@ -214,7 +214,7 @@ export const moduleData: Module[] = [
     progress: 0,
     color: 'bg-pink-600',
     isPremium: true,
-    price: 24.99
+    price: 14.49
   }
 ];
 
