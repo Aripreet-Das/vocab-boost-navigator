@@ -12,6 +12,7 @@ import ProgressPage from "./pages/Progress";
 import CartPage from "./pages/CartPage";
 import ProfilePage from "./pages/ProfilePage";
 import NotFound from "./pages/NotFound";
+import "./App.css";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,7 @@ const App = () => (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <TooltipProvider>
         <Toaster />
-        <Sonner />
+        <Sonner position="top-center" expand={true} richColors closeButton />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />

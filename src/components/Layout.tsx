@@ -12,7 +12,11 @@ const Layout = ({ children }: LayoutProps) => {
   const { theme } = useTheme();
   
   return (
-    <div className={`flex flex-col min-h-screen font-montserrat ${theme === 'dark' ? 'bg-corporate-darkblue' : 'bg-corporate-lightgray'}`}>
+    <div className={`flex flex-col min-h-screen font-montserrat ${
+      theme === 'dark' 
+        ? 'bg-gradient-to-b from-corporate-darkblue to-black text-white' 
+        : 'bg-gradient-to-b from-white to-corporate-lightgray'
+    }`}>
       <Header />
       <main className="flex-grow">
         {children}
