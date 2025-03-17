@@ -6,11 +6,13 @@ import ModuleCard from '@/components/ModuleCard';
 import ProgressStats from '@/components/ProgressStats';
 import ScenarioExample from '@/components/ScenarioExample';
 import { getWordOfTheDay, moduleData, getUserProgress, getBusinessScenario } from '@/data/vocabularyData';
+import { useTheme } from 'next-themes';
 
 const Index = () => {
   const wordOfTheDay = getWordOfTheDay();
   const userProgress = getUserProgress();
   const businessScenario = getBusinessScenario();
+  const { theme } = useTheme();
   
   // Select the first 4 modules to display
   const featuredModules = moduleData.slice(0, 4);
@@ -19,10 +21,10 @@ const Index = () => {
     <Layout>
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-corporate-navy mb-2">
+          <h1 className={`text-3xl md:text-4xl font-bold ${theme === 'dark' ? 'text-white' : 'text-corporate-navy'} mb-2`}>
             Build Your Professional Vocabulary
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className={`text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} max-w-2xl mx-auto`}>
             Enhance your business communication skills one word at a time
           </p>
         </div>
@@ -38,8 +40,8 @@ const Index = () => {
         
         <div className="mb-12">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-corporate-navy">Learning Modules</h2>
-            <a href="/modules" className="text-corporate-navy hover:text-corporate-gold font-medium text-sm transition-colors">
+            <h2 className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-corporate-navy'}`}>Learning Modules</h2>
+            <a href="/modules" className={`${theme === 'dark' ? 'text-corporate-lightgold hover:text-corporate-gold' : 'text-corporate-navy hover:text-corporate-gold'} font-medium text-sm transition-colors`}>
               View All Modules →
             </a>
           </div>
@@ -52,7 +54,7 @@ const Index = () => {
         </div>
         
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-corporate-navy mb-6">Vocabulary in Context</h2>
+          <h2 className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-corporate-navy'} mb-6`}>Vocabulary in Context</h2>
           <ScenarioExample scenario={businessScenario} />
         </div>
       </div>

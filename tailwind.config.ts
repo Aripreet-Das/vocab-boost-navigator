@@ -67,7 +67,9 @@ export default {
 					navy: '#0A2342',
 					gold: '#E6AF2E',
 					lightgray: '#F5F5F5',
-					darkgray: '#333333',
+					darkgray: '#1A1F2C',
+					darkblue: '#121A29',
+					lightgold: '#F4D488',
 				}
 			},
 			fontFamily: {
