@@ -34,11 +34,11 @@
 }
 
 .section-title {
-  @apply text-2xl md:text-3xl font-bold;
+  @apply text-2xl md:text-3xl font-bold text-white;
 }
 
 .section-subtitle {
-  @apply text-lg text-gray-600 dark:text-gray-300;
+  @apply text-lg text-gray-400;
 }
 
 /* Card hover effects */
@@ -48,7 +48,7 @@
 
 .hover-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
 }
 
 .dark .hover-card:hover {
@@ -63,7 +63,7 @@
 /* Image styles */
 .img-highlight {
   @apply rounded-lg transition-all duration-300;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
 .dark .img-highlight {
@@ -71,9 +71,35 @@
 }
 
 .img-highlight:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
 .dark .img-highlight:hover {
   box-shadow: 0 10px 15px -3px rgba(230, 175, 46, 0.3);
+}
+
+/* Scenario specific styles */
+.scenario-card {
+  @apply bg-corporate-darkblue border border-corporate-navy rounded-lg overflow-hidden;
+}
+
+.scenario-heading {
+  @apply font-bold text-white mb-1;
+}
+
+.scenario-context {
+  @apply text-sm text-gray-400 italic mb-4;
+}
+
+.scenario-content {
+  @apply text-gray-300 leading-relaxed;
+}
+
+.vocabulary-tag {
+  @apply px-3 py-1 bg-corporate-navy text-gray-300 rounded-full text-sm;
+}
+
+/* Highlighted vocabulary words */
+.vocabulary-highlight {
+  @apply text-corporate-gold font-bold;
 }

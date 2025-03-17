@@ -10,11 +10,12 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const { theme } = useTheme();
+  const isDark = theme === 'dark';
   
   return (
     <div className={`flex flex-col min-h-screen font-montserrat ${
-      theme === 'dark' 
-        ? 'bg-gradient-to-b from-corporate-darkblue to-black text-white' 
+      isDark || theme === undefined
+        ? 'bg-gradient-to-b from-corporate-navy via-corporate-darkblue to-black text-white' 
         : 'bg-gradient-to-b from-white to-corporate-lightgray'
     }`}>
       <Header />

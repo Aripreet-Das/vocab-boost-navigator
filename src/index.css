@@ -45,7 +45,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
+  .dark, [data-theme="dark"] {
     --background: 222 47% 11%;
     --foreground: 210 40% 98%;
 
@@ -93,33 +93,41 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white font-montserrat;
+  }
+  
+  p {
+    @apply text-gray-300;
+  }
 }
 
 /* Custom styles for cards */
 .word-of-day-card {
   @apply transition-all duration-300 hover:shadow-xl;
 }
-.dark .word-of-day-card {
+.dark .word-of-day-card, .word-of-day-card {
   @apply bg-corporate-darkblue/80 border-t-corporate-gold border-t-4 shadow-lg shadow-corporate-gold/20;
 }
 
-.dark .progress-stats-card {
+.dark .progress-stats-card, .progress-stats-card {
   @apply bg-corporate-darkblue/80 shadow-lg shadow-corporate-navy/30;
 }
 
-.dark .scenario-card {
-  @apply bg-corporate-darkblue/80;
+.dark .scenario-card, .scenario-card {
+  @apply bg-corporate-darkblue/80 border border-corporate-navy;
 }
 
 .module-card {
   @apply transform transition-all duration-300 hover:scale-105 hover:shadow-xl;
 }
 
-.dark .module-card {
+.dark .module-card, .module-card {
   @apply bg-corporate-darkblue/90 text-white shadow-lg shadow-corporate-gold/10;
 }
 
-.dark .module-header {
+.dark .module-header, .module-header {
   @apply bg-opacity-80;
 }
 
@@ -180,15 +188,20 @@
   @apply bg-corporate-gold hover:bg-corporate-gold/90 text-white font-medium transition-colors;
 }
 
-.dark .btn-navy {
+.dark .btn-navy, .btn-navy {
   @apply bg-corporate-navy hover:bg-corporate-navy/80 text-white;
 }
 
-.btn-navy {
-  @apply bg-corporate-navy hover:bg-corporate-navy/90 text-white font-medium transition-colors;
+/* Glass effect for cards in dark mode */
+.dark .glass-card, .glass-card {
+  @apply bg-corporate-darkblue/70 backdrop-blur-sm border border-corporate-navy/50;
 }
 
-/* Glass effect for cards in dark mode */
-.dark .glass-card {
-  @apply bg-corporate-darkblue/70 backdrop-blur-sm border border-corporate-navy/50;
+/* Tab styles specific to scenarios page */
+.scenarios-tabs {
+  @apply bg-corporate-darkblue border border-corporate-navy;
+}
+
+.scenarios-tab {
+  @apply text-gray-400 data-[state=active]:bg-corporate-navy data-[state=active]:text-white;
 }
