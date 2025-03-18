@@ -15,7 +15,7 @@ const WordOfTheDay = ({ word }: WordOfTheDayProps) => {
   const isDark = theme === 'dark';
   
   return (
-    <Card className={`shadow-lg animate-fade-in border-t-4 border-t-corporate-gold word-of-day-card ${isDark ? 'bg-corporate-darkblue text-white' : ''}`}>
+    <Card className="shadow-lg animate-fade-in border-t-4 border-t-corporate-gold word-of-day-card">
       <CardHeader className="pb-2">
         <div className="flex justify-between items-center">
           <div>
@@ -23,7 +23,7 @@ const WordOfTheDay = ({ word }: WordOfTheDayProps) => {
               <BookOpen className="h-5 w-5 mr-2 text-corporate-gold" />
               Word of the Day
             </CardTitle>
-            <CardDescription className={isDark ? 'text-gray-300' : ''}>Expand your vocabulary daily</CardDescription>
+            <CardDescription className={isDark ? 'text-gray-300' : 'text-gray-600'}>Expand your vocabulary daily</CardDescription>
           </div>
           <Badge variant="outline" className="bg-corporate-gold text-white font-medium">
             {word.difficulty}
@@ -31,7 +31,7 @@ const WordOfTheDay = ({ word }: WordOfTheDayProps) => {
         </div>
       </CardHeader>
       <CardContent>
-        <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-white'} p-4 rounded-md shadow-sm mb-4`}>
+        <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-50'} p-4 rounded-md shadow-sm mb-4`}>
           <div className="flex justify-between items-center mb-2">
             <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-corporate-navy'}`}>{word.term}</h3>
             <button className={`${isDark ? 'text-white hover:text-corporate-gold' : 'text-corporate-navy hover:text-corporate-gold'} transition-colors`}>

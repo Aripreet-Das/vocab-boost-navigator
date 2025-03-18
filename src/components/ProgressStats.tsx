@@ -20,7 +20,7 @@ const ProgressStats = ({ stats }: ProgressStatsProps) => {
   const isDark = theme === 'dark';
   
   return (
-    <Card className={`shadow-lg animate-fade-in progress-stats-card ${isDark ? 'bg-corporate-darkblue text-white' : ''}`}>
+    <Card className="shadow-lg animate-fade-in progress-stats-card">
       <CardHeader className="pb-2">
         <CardTitle className={`text-xl font-bold ${isDark ? 'text-white' : 'text-corporate-navy'} flex items-center`}>
           <Award className="h-5 w-5 mr-2 text-corporate-gold" />
@@ -29,7 +29,7 @@ const ProgressStats = ({ stats }: ProgressStatsProps) => {
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-          <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-white'} p-4 rounded-md shadow-sm flex flex-col items-center justify-center text-center`}>
+          <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-50'} p-4 rounded-md shadow-sm flex flex-col items-center justify-center text-center`}>
             <BookOpen className="h-6 w-6 text-corporate-gold mb-2" />
             <div className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Words Mastered</div>
             <div className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-corporate-navy'} mt-1`}>
@@ -37,7 +37,7 @@ const ProgressStats = ({ stats }: ProgressStatsProps) => {
             </div>
           </div>
           
-          <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-white'} p-4 rounded-md shadow-sm flex flex-col items-center justify-center text-center`}>
+          <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-50'} p-4 rounded-md shadow-sm flex flex-col items-center justify-center text-center`}>
             <Flame className="h-6 w-6 text-corporate-gold mb-2" />
             <div className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Daily Streak</div>
             <div className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-corporate-navy'} mt-1`}>
@@ -45,7 +45,7 @@ const ProgressStats = ({ stats }: ProgressStatsProps) => {
             </div>
           </div>
           
-          <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-white'} p-4 rounded-md shadow-sm flex flex-col items-center justify-center text-center`}>
+          <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-50'} p-4 rounded-md shadow-sm flex flex-col items-center justify-center text-center`}>
             <Target className="h-6 w-6 text-corporate-gold mb-2" />
             <div className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Modules Completed</div>
             <div className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-corporate-navy'} mt-1`}>
@@ -54,7 +54,7 @@ const ProgressStats = ({ stats }: ProgressStatsProps) => {
           </div>
         </div>
         
-        <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-white'} p-4 rounded-md shadow-sm`}>
+        <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-50'} p-4 rounded-md shadow-sm`}>
           <div className="flex justify-between items-center mb-2">
             <h3 className={`font-semibold ${isDark ? 'text-white' : 'text-corporate-navy'}`}>Current Mastery Level</h3>
             <span className="text-corporate-gold font-medium">{stats.masteryLevel}</span>

@@ -35,11 +35,13 @@
 }
 
 .section-title {
-  @apply text-2xl md:text-3xl font-bold text-white;
+  @apply text-2xl md:text-3xl font-bold;
+  @apply dark:text-white text-corporate-navy;
 }
 
 .section-subtitle {
-  @apply text-lg text-gray-400;
+  @apply text-lg;
+  @apply dark:text-gray-400 text-gray-600;
 }
 
 /* Card hover effects */
@@ -81,23 +83,23 @@
 
 /* Scenario specific styles */
 .scenario-card {
-  @apply bg-corporate-darkblue border border-corporate-navy rounded-lg overflow-hidden;
+  @apply dark:bg-corporate-darkblue dark:border-corporate-navy bg-white border border-gray-200 rounded-lg overflow-hidden;
 }
 
 .scenario-heading {
-  @apply font-bold text-white mb-1;
+  @apply font-bold dark:text-white text-corporate-navy mb-1;
 }
 
 .scenario-context {
-  @apply text-sm text-gray-400 italic mb-4;
+  @apply text-sm dark:text-gray-400 text-gray-500 italic mb-4;
 }
 
 .scenario-content {
-  @apply text-gray-300 leading-relaxed;
+  @apply dark:text-gray-300 text-gray-700 leading-relaxed;
 }
 
 .vocabulary-tag {
-  @apply px-3 py-1 bg-corporate-navy text-gray-300 rounded-full text-sm;
+  @apply px-3 py-1 dark:bg-corporate-navy bg-gray-100 dark:text-gray-300 text-gray-700 rounded-full text-sm;
 }
 
 /* Highlighted vocabulary words */
@@ -105,27 +107,132 @@
   @apply text-corporate-gold font-bold;
 }
 
+/* Light mode styles */
+.word-of-day-card.dark, .word-of-day-card {
+  @apply dark:bg-corporate-darkblue/80 dark:border-t-corporate-gold bg-white border border-gray-200 border-t-corporate-gold shadow-md;
+}
+
+.module-card.dark, .module-card {
+  @apply dark:bg-corporate-darkblue/90 dark:text-white bg-white text-corporate-navy shadow-md;
+}
+
+.progress-stats-card.dark, .progress-stats-card {
+  @apply dark:bg-corporate-darkblue/80 bg-white shadow-md;
+}
+
+.dark .module-card-text, .module-card-text {
+  @apply dark:text-gray-300 text-gray-700;
+}
+
+.dark .progress-text, .progress-text {
+  @apply dark:text-gray-300 text-gray-700;
+}
+
+.dark .card-bg, .card-bg {
+  @apply dark:bg-corporate-darkgray bg-gray-50;
+}
+
 /* Cart specific styles */
-.dark .cart-item-title {
-  @apply text-white;
+.dark .cart-item-title, .cart-item-title {
+  @apply dark:text-white text-corporate-navy;
 }
 
-.dark .cart-item-price {
-  @apply text-corporate-gold;
+.dark .cart-item-price, .cart-item-price {
+  @apply dark:text-corporate-gold text-corporate-gold;
 }
 
-.dark .cart-empty-message {
-  @apply text-gray-300;
+.dark .cart-empty-message, .cart-empty-message {
+  @apply dark:text-gray-300 text-gray-700;
 }
 
-.dark .cart-total {
-  @apply text-white;
+.dark .cart-total, .cart-total {
+  @apply dark:text-white text-corporate-navy;
 }
 
-.dark .recommended-module {
-  @apply bg-corporate-darkblue/80 text-white;
+.dark .recommended-module, .recommended-module {
+  @apply dark:bg-corporate-darkblue/80 bg-gray-50 dark:text-white text-corporate-navy;
 }
 
-.dark .recommended-price {
-  @apply text-corporate-gold;
+.dark .recommended-price, .recommended-price {
+  @apply dark:text-corporate-gold text-corporate-gold;
+}
+
+/* Define animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(230, 175, 46, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(230, 175, 46, 0);
+  }
+}
+
+@keyframes progress-fill {
+  0% { width: 0%; }
+  100% { width: var(--progress-width); }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Apply animations */
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-progress-fill {
+  animation: progress-fill 1.5s ease-out forwards;
+}
+
+/* Button styles */
+.btn-gold {
+  @apply bg-corporate-gold hover:bg-corporate-gold/90 text-white font-medium transition-colors;
+}
+
+.dark .btn-navy, .btn-navy {
+  @apply bg-corporate-navy hover:bg-corporate-navy/80 text-white;
+}
+
+/* Glass effect for cards in dark mode */
+.dark .glass-card, .glass-card {
+  @apply dark:bg-corporate-darkblue/70 bg-white/70 backdrop-blur-sm dark:border-corporate-navy/50 border border-gray-200;
+}
+
+/* Tab styles specific to scenarios page */
+.scenarios-tabs {
+  @apply dark:bg-corporate-darkblue bg-white dark:border-corporate-navy border-gray-200;
+}
+
+.scenarios-tab {
+  @apply dark:text-gray-400 text-gray-500 dark:data-[state=active]:bg-corporate-navy data-[state=active]:bg-gray-100 dark:data-[state=active]:text-white data-[state=active]:text-corporate-navy;
+}
+
+/* Light mode card stats */
+.stats-card-light {
+  @apply bg-white shadow-sm rounded-md p-4 border border-gray-200;
 }

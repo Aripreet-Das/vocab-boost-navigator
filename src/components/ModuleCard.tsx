@@ -27,7 +27,7 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
       case 'megaphone':
         return <Megaphone className="h-6 w-6 text-white" />;
       case 'handshake':
-        return <div className="h-6 w-6 text-white flex items-center justify-center">🤝</div>; // Using emoji as HandshakeIcon isn't in lucide-react
+        return <div className="h-6 w-6 text-white flex items-center justify-center">🤝</div>;
       case 'clipboard-list':
         return <ClipboardList className="h-6 w-6 text-white" />;
       case 'users':
@@ -44,7 +44,6 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
       toast("This is a premium module. Please purchase to continue.");
     } else {
       toast("Continuing with the free module!");
-      // Continue learning logic would go here
     }
   };
 
@@ -59,7 +58,7 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
   };
 
   return (
-    <Card className={`overflow-hidden transition-all duration-300 hover:shadow-lg border-none module-card ${module.isPremium ? 'relative' : ''} ${isDark ? 'bg-corporate-darkblue' : ''}`}>
+    <Card className={`overflow-hidden transition-all duration-300 hover:shadow-lg border-none module-card ${module.isPremium ? 'relative' : ''}`}>
       {module.isPremium && (
         <div className="absolute top-2 right-2 bg-corporate-navy text-white text-xs py-1 px-2 rounded-full flex items-center font-medium z-10">
           <Lock className="h-3 w-3 mr-1" />
@@ -73,10 +72,10 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
         <h3 className="text-white font-semibold">{module.title}</h3>
       </div>
       <CardContent className="pt-4">
-        <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'} mb-4`}>{module.description}</p>
+        <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'} mb-4 module-card-text`}>{module.description}</p>
         <div className="flex justify-between text-sm mb-2">
-          <span className={isDark ? 'text-gray-300' : ''}>Progress</span>
-          <span className={`font-medium ${isDark ? 'text-gray-300' : ''}`}>
+          <span className={`progress-text ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Progress</span>
+          <span className={`font-medium progress-text ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
             {module.progress} / {module.totalWords} words
           </span>
         </div>
