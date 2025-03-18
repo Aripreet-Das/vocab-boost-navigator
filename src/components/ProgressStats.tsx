@@ -60,7 +60,7 @@ const ProgressStats = ({ stats }: ProgressStatsProps) => {
             <span className="text-corporate-gold font-medium">{stats.masteryLevel}</span>
           </div>
           
-          <div className="relative h-2 bg-gray-600 rounded-full overflow-hidden">
+          <div className="relative h-2 bg-gray-300 rounded-full overflow-hidden">
             <div 
               className="absolute top-0 left-0 h-full bg-corporate-gold rounded-full animate-progress-fill"
               style={{ '--progress-width': `${progressPercentage}%` } as React.CSSProperties}

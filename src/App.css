@@ -58,6 +58,11 @@
   box-shadow: 0 10px 25px -5px rgba(230, 175, 46, 0.15);
 }
 
+/* Light mode hover card */
+.hover-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(10, 35, 66, 0.15);
+}
+
 /* Improved button styles */
 .cta-button {
   @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105;
@@ -117,7 +122,7 @@
 }
 
 .progress-stats-card.dark, .progress-stats-card {
-  @apply dark:bg-corporate-darkblue/80 bg-white shadow-md;
+  @apply dark:bg-corporate-darkblue/80 bg-white shadow-md border border-gray-200;
 }
 
 .dark .module-card-text, .module-card-text {
@@ -142,7 +147,7 @@
 }
 
 .dark .cart-empty-message, .cart-empty-message {
-  @apply dark:text-gray-300 text-gray-700;
+  @apply dark:text-gray-300 text-gray-600;
 }
 
 .dark .cart-total, .cart-total {
@@ -235,4 +240,13 @@
 /* Light mode card stats */
 .stats-card-light {
   @apply bg-white shadow-sm rounded-md p-4 border border-gray-200;
+}
+
+/* Toast styling for light mode */
+.sonner-toast-custom {
+  @apply bg-white text-corporate-navy border border-gray-200 shadow-md;
+}
+
+.sonner-toast-success {
+  @apply border-l-4 border-l-corporate-gold;
 }

@@ -14,9 +14,9 @@ const Layout = ({ children }: LayoutProps) => {
   
   return (
     <div className={`flex flex-col min-h-screen w-full font-montserrat ${
-      isDark || theme === undefined
+      isDark 
         ? 'bg-gradient-to-b from-corporate-navy via-corporate-darkblue to-black text-white' 
-        : 'bg-white text-corporate-navy'
+        : 'bg-gradient-to-b from-white via-gray-50 to-gray-100 text-corporate-navy'
     }`}>
       <Header />
       <main className="flex-grow w-full">
