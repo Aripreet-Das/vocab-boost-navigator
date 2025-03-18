@@ -41,9 +41,11 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
 
   const handleContinueLearning = () => {
     if (module.isPremium) {
-      toast("This is a premium module. Please purchase to continue.");
+      // Don't show toast for premium module warning
+      console.log("This is a premium module. Please purchase to continue.");
     } else {
-      toast("Continuing with the free module!");
+      // Don't show toast for free module
+      console.log("Continuing with the free module!");
     }
   };
 
@@ -51,6 +53,7 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
     if (onAddToCart) {
       onAddToCart(module.id);
     } else {
+      // Only show toast for "Module Added to cart" message
       toast.success(`${module.title} added to cart!`, {
         description: `Price: $${module.price?.toFixed(2)}`,
       });

@@ -2,7 +2,6 @@
 import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 import { X, CreditCard, ShoppingCart } from 'lucide-react';
 import { moduleData } from '@/data/vocabularyData';
 

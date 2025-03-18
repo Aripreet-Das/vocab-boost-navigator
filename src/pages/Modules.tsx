@@ -38,9 +38,11 @@ const Modules = () => {
           .map(m => ({ id: m.id, title: m.title, price: m.price || 0 }));
         
         localStorage.setItem('cart', JSON.stringify(cartData));
+        // Only show toast for successfully adding module to cart
         toast.success(`${module.title} added to cart`);
       } else {
-        toast.info("This module is already in your cart");
+        // Don't show toast for already-in-cart notification
+        console.log("This module is already in your cart");
       }
     }
   };
