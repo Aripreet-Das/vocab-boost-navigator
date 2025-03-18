@@ -10,9 +10,10 @@ import { useTheme } from "next-themes";
 
 interface ModuleCardProps {
   module: Module;
+  onAddToCart?: (moduleId: string) => void;
 }
 
-const ModuleCard = ({ module }: ModuleCardProps) => {
+const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -47,11 +48,14 @@ const ModuleCard = ({ module }: ModuleCardProps) => {
     }
   };
 
-  const handlePurchase = () => {
-    toast.success(`Purchase initiated for ${module.title}!`, {
-      description: `Price: $${module.price?.toFixed(2)}`,
-    });
-    // In a real app, this would open a payment modal or redirect to checkout
+  const handleAddToCart = () => {
+    if (onAddToCart) {
+      onAddToCart(module.id);
+    } else {
+      toast.success(`${module.title} added to cart!`, {
+        description: `Price: $${module.price?.toFixed(2)}`,
+      });
+    }
   };
 
   return (
@@ -90,11 +94,11 @@ const ModuleCard = ({ module }: ModuleCardProps) => {
       <CardFooter className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-50'} px-4 py-3`}>
         {module.isPremium ? (
           <Button 
-            onClick={handlePurchase}
+            onClick={handleAddToCart}
             className="w-full bg-corporate-gold hover:bg-corporate-gold/90 text-white"
           >
             <ShoppingCart className="h-4 w-4 mr-2" />
-            Purchase Module
+            Add to Cart
           </Button>
         ) : (
           <Button 
