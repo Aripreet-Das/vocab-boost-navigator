@@ -56,10 +56,10 @@ const CartPage = () => {
     <Layout>
       <div className="w-full mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-corporate-navy mb-2">
+          <h1 className="text-3xl font-bold text-corporate-navy dark:text-white mb-2">
             Shopping Cart
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600 dark:text-gray-300">
             Purchase premium modules to accelerate your career vocabulary
           </p>
         </div>
@@ -74,20 +74,20 @@ const CartPage = () => {
           </div>
           
           <div className="space-y-6">
-            <div className="bg-corporate-navy/5 p-6 rounded-lg">
-              <h2 className="text-lg font-semibold text-corporate-navy mb-4">Recommended Modules</h2>
+            <div className="bg-corporate-navy/5 dark:bg-corporate-navy/20 p-6 rounded-lg">
+              <h2 className="text-lg font-semibold text-corporate-navy dark:text-white mb-4">Recommended Modules</h2>
               {recommendedModules.length > 0 ? (
                 <div className="space-y-4">
                   {recommendedModules.map(module => (
-                    <div key={module.id} className="p-3 bg-white rounded-md shadow-sm">
-                      <h3 className="font-medium">{module.title}</h3>
+                    <div key={module.id} className="p-3 bg-white dark:bg-corporate-darkblue/80 rounded-md shadow-sm">
+                      <h3 className="font-medium dark:text-white">{module.title}</h3>
                       <div className="flex justify-between items-center mt-2">
                         <span className="text-corporate-gold font-bold">${module.price?.toFixed(2)}</span>
                         <Button 
                           size="sm" 
                           variant="outline"
                           onClick={() => handleAddToCart(module.id)}
-                          className="text-corporate-navy border-corporate-navy hover:bg-corporate-navy hover:text-white"
+                          className="text-corporate-navy border-corporate-navy hover:bg-corporate-navy hover:text-white dark:border-corporate-gold dark:text-corporate-gold dark:hover:bg-corporate-gold dark:hover:text-corporate-navy"
                         >
                           Add to Cart
                         </Button>
@@ -96,14 +96,14 @@ const CartPage = () => {
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500 text-center py-4">No more premium modules available</p>
+                <p className="text-gray-500 dark:text-gray-400 text-center py-4">No more premium modules available</p>
               )}
 
-              <div className="mt-4 pt-4 border-t border-gray-200">
+              <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                 <Link to="/modules">
                   <Button 
                     variant="ghost" 
-                    className="w-full text-corporate-navy"
+                    className="w-full text-corporate-navy dark:text-white hover:bg-corporate-navy/10 dark:hover:bg-white/10"
                   >
                     <ShoppingBag className="mr-2 h-4 w-4" />
                     Browse All Modules

@@ -104,3 +104,28 @@
 .vocabulary-highlight {
   @apply text-corporate-gold font-bold;
 }
+
+/* Cart specific styles */
+.dark .cart-item-title {
+  @apply text-white;
+}
+
+.dark .cart-item-price {
+  @apply text-corporate-gold;
+}
+
+.dark .cart-empty-message {
+  @apply text-gray-300;
+}
+
+.dark .cart-total {
+  @apply text-white;
+}
+
+.dark .recommended-module {
+  @apply bg-corporate-darkblue/80 text-white;
+}
+
+.dark .recommended-price {
+  @apply text-corporate-gold;
+}
