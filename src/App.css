@@ -36,12 +36,12 @@
 
 .section-title {
   @apply text-2xl md:text-3xl font-bold;
-  @apply dark:text-white text-corporate-navy;
+  @apply text-corporate-navy dark:text-white;
 }
 
 .section-subtitle {
   @apply text-lg;
-  @apply dark:text-gray-400 text-gray-600;
+  @apply text-gray-600 dark:text-gray-400;
 }
 
 /* Card hover effects */
@@ -51,7 +51,7 @@
 
 .hover-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);
 }
 
 .dark .hover-card:hover {
@@ -60,7 +60,7 @@
 
 /* Light mode hover card */
 .hover-card:hover {
-  box-shadow: 0 10px 25px -5px rgba(10, 35, 66, 0.15);
+  box-shadow: 0 10px 25px -5px rgba(10, 35, 66, 0.1);
 }
 
 /* Improved button styles */
@@ -71,7 +71,7 @@
 /* Image styles */
 .img-highlight {
   @apply rounded-lg transition-all duration-300;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .dark .img-highlight {
@@ -79,7 +79,7 @@
 }
 
 .img-highlight:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
 }
 
 .dark .img-highlight:hover {
@@ -88,23 +88,23 @@
 
 /* Scenario specific styles */
 .scenario-card {
-  @apply dark:bg-corporate-darkblue dark:border-corporate-navy bg-white border border-gray-200 rounded-lg overflow-hidden;
+  @apply bg-white dark:bg-corporate-darkblue border border-gray-200 dark:border-corporate-navy rounded-lg overflow-hidden;
 }
 
 .scenario-heading {
-  @apply font-bold dark:text-white text-corporate-navy mb-1;
+  @apply font-bold text-corporate-navy dark:text-white mb-1;
 }
 
 .scenario-context {
-  @apply text-sm dark:text-gray-400 text-gray-500 italic mb-4;
+  @apply text-sm text-gray-600 dark:text-gray-400 italic mb-4;
 }
 
 .scenario-content {
-  @apply dark:text-gray-300 text-gray-700 leading-relaxed;
+  @apply text-gray-700 dark:text-gray-300 leading-relaxed;
 }
 
 .vocabulary-tag {
-  @apply px-3 py-1 dark:bg-corporate-navy bg-gray-100 dark:text-gray-300 text-gray-700 rounded-full text-sm;
+  @apply px-3 py-1 bg-gray-100 dark:bg-corporate-navy text-gray-700 dark:text-gray-300 rounded-full text-sm;
 }
 
 /* Highlighted vocabulary words */
@@ -114,52 +114,52 @@
 
 /* Light mode styles */
 .word-of-day-card.dark, .word-of-day-card {
-  @apply dark:bg-corporate-darkblue/80 dark:border-t-corporate-gold bg-white border border-gray-200 border-t-corporate-gold shadow-md;
+  @apply bg-white dark:bg-corporate-darkblue/80 border border-gray-200 border-t-corporate-gold dark:border-t-corporate-gold shadow-md;
 }
 
 .module-card.dark, .module-card {
-  @apply dark:bg-corporate-darkblue/90 dark:text-white bg-white text-corporate-navy shadow-md;
+  @apply bg-white dark:bg-corporate-darkblue/90 text-corporate-navy dark:text-white shadow-md;
 }
 
 .progress-stats-card.dark, .progress-stats-card {
-  @apply dark:bg-corporate-darkblue/80 bg-white shadow-md border border-gray-200;
+  @apply bg-white dark:bg-corporate-darkblue/80 shadow-md border border-gray-200;
 }
 
 .dark .module-card-text, .module-card-text {
-  @apply dark:text-gray-300 text-gray-700;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .dark .progress-text, .progress-text {
-  @apply dark:text-gray-300 text-gray-700;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .dark .card-bg, .card-bg {
-  @apply dark:bg-corporate-darkgray bg-gray-50;
+  @apply bg-gray-50 dark:bg-corporate-darkgray;
 }
 
 /* Cart specific styles */
 .dark .cart-item-title, .cart-item-title {
-  @apply dark:text-white text-corporate-navy;
+  @apply text-corporate-navy dark:text-white;
 }
 
 .dark .cart-item-price, .cart-item-price {
-  @apply dark:text-corporate-gold text-corporate-gold;
+  @apply text-corporate-gold dark:text-corporate-gold;
 }
 
 .dark .cart-empty-message, .cart-empty-message {
-  @apply dark:text-gray-300 text-gray-600;
+  @apply text-gray-600 dark:text-gray-300;
 }
 
 .dark .cart-total, .cart-total {
-  @apply dark:text-white text-corporate-navy;
+  @apply text-corporate-navy dark:text-white;
 }
 
 .dark .recommended-module, .recommended-module {
-  @apply dark:bg-corporate-darkblue/80 bg-gray-50 dark:text-white text-corporate-navy;
+  @apply bg-gray-50 dark:bg-corporate-darkblue/80 text-corporate-navy dark:text-white;
 }
 
 .dark .recommended-price, .recommended-price {
-  @apply dark:text-corporate-gold text-corporate-gold;
+  @apply text-corporate-gold dark:text-corporate-gold;
 }
 
 /* Define animations */
@@ -223,18 +223,18 @@
   @apply bg-corporate-navy hover:bg-corporate-navy/80 text-white;
 }
 
-/* Glass effect for cards in dark mode */
+/* Glass effect for cards in light mode */
 .dark .glass-card, .glass-card {
-  @apply dark:bg-corporate-darkblue/70 bg-white/70 backdrop-blur-sm dark:border-corporate-navy/50 border border-gray-200;
+  @apply bg-white/70 dark:bg-corporate-darkblue/70 backdrop-blur-sm border border-gray-200 dark:border-corporate-navy/50;
 }
 
 /* Tab styles specific to scenarios page */
 .scenarios-tabs {
-  @apply dark:bg-corporate-darkblue bg-white dark:border-corporate-navy border-gray-200;
+  @apply bg-white dark:bg-corporate-darkblue border border-gray-200 dark:border-corporate-navy;
 }
 
 .scenarios-tab {
-  @apply dark:text-gray-400 text-gray-500 dark:data-[state=active]:bg-corporate-navy data-[state=active]:bg-gray-100 dark:data-[state=active]:text-white data-[state=active]:text-corporate-navy;
+  @apply text-gray-500 dark:text-gray-400 data-[state=active]:bg-gray-100 dark:data-[state=active]:bg-corporate-navy data-[state=active]:text-corporate-navy dark:data-[state=active]:text-white;
 }
 
 /* Light mode card stats */

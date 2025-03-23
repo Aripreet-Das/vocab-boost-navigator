@@ -84,7 +84,7 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
         </div>
         <Progress 
           value={progressPercentage} 
-          className="h-2" 
+          className="h-2 bg-gray-200 dark:bg-gray-700"
         />
         {module.isPremium && (
           <div className="mt-4 flex items-center justify-between font-bold">
@@ -93,7 +93,7 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
           </div>
         )}
       </CardContent>
-      <CardFooter className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-100'} px-4 py-3`}>
+      <CardFooter className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-50'} px-4 py-3`}>
         {module.isPremium ? (
           <Button 
             onClick={handleAddToCart}
@@ -106,7 +106,7 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
           <Button 
             onClick={handleContinueLearning}
             variant="ghost" 
-            className={`${isDark ? 'text-white hover:text-corporate-gold' : 'text-corporate-navy hover:text-corporate-gold'} font-medium text-sm transition-colors`}
+            className={`w-full ${isDark ? 'text-white hover:text-corporate-gold' : 'text-corporate-navy hover:text-corporate-gold'} font-medium text-sm transition-colors`}
           >
             Continue Learning
             <ArrowRight className="h-4 w-4 ml-2" />

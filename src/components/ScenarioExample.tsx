@@ -30,23 +30,23 @@ const ScenarioExample = ({ scenario, context }: ScenarioExampleProps) => {
     <div className="text-left">
       <div className="flex items-start mb-3">
         <FileText className="h-5 w-5 mr-2 text-corporate-gold mt-1" />
-        <h3 className="text-lg font-bold text-white">Business Scenario</h3>
+        <h3 className="text-lg font-bold text-corporate-navy dark:text-white">Business Scenario</h3>
       </div>
       
-      <div className="bg-corporate-darkgray p-5 rounded-md border border-corporate-navy mb-4">
-        <h3 className="text-lg font-bold text-white mb-1">{scenario.title}</h3>
-        <p className="text-sm text-gray-400 italic mb-4">{context || scenario.context}</p>
+      <div className="bg-gray-50 dark:bg-corporate-darkgray p-5 rounded-md border border-gray-200 dark:border-corporate-navy mb-4">
+        <h3 className="text-lg font-bold text-corporate-navy dark:text-white mb-1">{scenario.title}</h3>
+        <p className="text-sm text-gray-600 dark:text-gray-400 italic mb-4">{context || scenario.context}</p>
         
-        <div className="text-gray-300 text-base leading-relaxed">
+        <div className="text-gray-700 dark:text-gray-300 text-base leading-relaxed">
           {renderHighlightedContent()}
         </div>
       </div>
       
-      <div className="pt-4 border-t border-corporate-navy">
-        <h4 className="font-medium text-white mb-2">Vocabulary Used:</h4>
+      <div className="pt-4 border-t border-gray-200 dark:border-corporate-navy">
+        <h4 className="font-medium text-corporate-navy dark:text-white mb-2">Vocabulary Used:</h4>
         <div className="flex flex-wrap gap-2">
           {scenario.vocabularyHighlighted.map((word, index) => (
-            <div key={index} className="px-3 py-1 bg-corporate-navy text-gray-300 rounded-full text-sm">
+            <div key={index} className="px-3 py-1 bg-gray-100 dark:bg-corporate-navy text-gray-700 dark:text-gray-300 rounded-full text-sm">
               {word}
             </div>
           ))}

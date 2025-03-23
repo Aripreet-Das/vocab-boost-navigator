@@ -57,7 +57,7 @@ const WordOfTheDay = ({ word }: WordOfTheDayProps) => {
             <h4 className={`font-semibold ${isDark ? 'text-white' : 'text-corporate-navy'}`}>Synonyms:</h4>
             <div className="flex flex-wrap gap-2 mt-1">
               {word.synonyms.map((synonym, index) => (
-                <Badge key={index} variant="secondary" className={`${isDark ? 'bg-corporate-darkgray text-gray-300' : 'bg-gray-200 text-gray-700'}`}>
+                <Badge key={index} variant="secondary" className={`${isDark ? 'bg-corporate-darkgray text-gray-300' : 'bg-gray-100 text-gray-700'}`}>
                   {synonym}
                 </Badge>
               ))}

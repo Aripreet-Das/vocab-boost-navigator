@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -95,11 +94,11 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply text-white font-montserrat;
+    @apply text-corporate-navy dark:text-white font-montserrat;
   }
   
   p {
-    @apply text-gray-300;
+    @apply text-gray-700 dark:text-gray-300;
   }
 }
 
