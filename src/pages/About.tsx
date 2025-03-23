@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '@/components/Layout';
 import { useTheme } from 'next-themes';
@@ -10,12 +9,12 @@ const About = () => {
   
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-8 max-w-5xl">
+      <div className="container mx-auto px-4 py-8 max-w-6xl lg:max-w-7xl">
         <div className="mb-8 text-center">
           <h1 className={`text-3xl md:text-4xl font-bold ${isDark ? 'text-white' : 'text-corporate-navy'} mb-4`}>
             About CorVoMaster
           </h1>
-          <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'} max-w-3xl mx-auto leading-relaxed`}>
+          <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'} max-w-4xl mx-auto leading-relaxed`}>
             Welcome to <span className="font-bold">CorVoMaster</span>, where we believe <span className="font-bold text-corporate-navy dark:text-corporate-gold">synergy</span> <span className="italic text-gray-600 dark:text-gray-400">(combined effort resulting in a greater outcome)</span> is the secret sauce behind professional growth. Our platform is here to be your <span className="font-bold text-corporate-navy dark:text-corporate-gold">game-changer</span> <span className="italic text-gray-600 dark:text-gray-400">(something that significantly alters the way things are done)</span> in mastering corporate communication. We blend daily learning, practical examples, and interactive features to help you sharpen your <span className="font-bold text-corporate-navy dark:text-corporate-gold">competitive edge</span> <span className="italic text-gray-600 dark:text-gray-400">(an advantage that sets you apart)</span> and elevate your career.
           </p>
         </div>
@@ -82,7 +81,7 @@ const About = () => {
           
           <div className={`p-6 rounded-lg ${isDark ? 'bg-corporate-darkgray' : 'bg-gray-50'} border ${isDark ? 'border-corporate-navy' : 'border-gray-200'} shadow-sm mb-10`}>
             <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-corporate-navy'} mb-4 text-center`}>Our Vision</h3>
-            <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} leading-relaxed text-center max-w-3xl mx-auto`}>
+            <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} leading-relaxed text-center max-w-4xl mx-auto`}>
               At CorVoMaster, we believe that effective communication is the backbone of every thriving organization. By fusing engaging content, interactive learning, and real-world examples, our mission is to help you <span className="font-bold text-corporate-navy dark:text-corporate-gold">leverage</span> <span className="italic text-gray-600 dark:text-gray-400">(use something to its maximum advantage)</span> your newfound language skills for maximum impact—be it in boardrooms, pitch meetings, or everyday workplace conversations.
             </p>
           </div>
@@ -127,7 +126,7 @@ const About = () => {
         
         <div className="text-center mb-12 p-8 rounded-lg bg-corporate-navy text-white">
           <h2 className="text-2xl font-bold mb-4">Join CorVoMaster Today</h2>
-          <p className="text-lg max-w-2xl mx-auto">
+          <p className="text-lg max-w-3xl mx-auto">
             Discover how a robust professional vocabulary can spark a <span className="font-bold text-corporate-gold">paradigm shift</span> in your career. Let's create <span className="font-bold text-corporate-gold">synergy</span> together and turn every conversation into an opportunity to shine!
           </p>
         </div>
