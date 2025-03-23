@@ -31,7 +31,7 @@ const WordOfTheDay = ({ word }: WordOfTheDayProps) => {
         </div>
       </CardHeader>
       <CardContent>
-        <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-50'} p-4 rounded-md shadow-sm mb-4`}>
+        <div className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-100'} p-4 rounded-md shadow-sm mb-4`}>
           <div className="flex justify-between items-center mb-2">
             <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-corporate-navy'}`}>{word.term}</h3>
             <button className={`${isDark ? 'text-white hover:text-corporate-gold' : 'text-corporate-navy hover:text-corporate-gold'} transition-colors`}>
@@ -39,25 +39,25 @@ const WordOfTheDay = ({ word }: WordOfTheDayProps) => {
             </button>
           </div>
           <div className="text-sm text-gray-500 italic">{word.partOfSpeech}</div>
-          <p className={`mt-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{word.definition}</p>
+          <p className={`mt-2 ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>{word.definition}</p>
         </div>
         
         <div className="space-y-4">
           <div>
             <h4 className={`font-semibold ${isDark ? 'text-white' : 'text-corporate-navy'}`}>Example:</h4>
-            <p className={`${isDark ? 'text-gray-300' : 'text-gray-700'} italic`}>"{word.example}"</p>
+            <p className={`${isDark ? 'text-gray-300' : 'text-gray-800'} italic`}>"{word.example}"</p>
           </div>
           
           <div>
             <h4 className={`font-semibold ${isDark ? 'text-white' : 'text-corporate-navy'}`}>Usage Tip:</h4>
-            <p className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{word.usageTip}</p>
+            <p className={`${isDark ? 'text-gray-300' : 'text-gray-800'}`}>{word.usageTip}</p>
           </div>
           
           <div>
             <h4 className={`font-semibold ${isDark ? 'text-white' : 'text-corporate-navy'}`}>Synonyms:</h4>
             <div className="flex flex-wrap gap-2 mt-1">
               {word.synonyms.map((synonym, index) => (
-                <Badge key={index} variant="secondary" className={`${isDark ? 'bg-corporate-darkgray text-gray-300' : 'bg-gray-100 text-gray-700'}`}>
+                <Badge key={index} variant="secondary" className={`${isDark ? 'bg-corporate-darkgray text-gray-300' : 'bg-gray-200 text-gray-800'}`}>
                   {synonym}
                 </Badge>
               ))}

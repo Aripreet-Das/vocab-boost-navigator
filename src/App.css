@@ -1,4 +1,3 @@
-
 #root {
   width: 100%;
   max-width: 100%;
@@ -41,7 +40,7 @@
 
 .section-subtitle {
   @apply text-lg;
-  @apply text-gray-600 dark:text-gray-400;
+  @apply text-gray-800 dark:text-gray-400;
 }
 
 /* Card hover effects */
@@ -100,11 +99,11 @@
 }
 
 .scenario-content {
-  @apply text-gray-700 dark:text-gray-300 leading-relaxed;
+  @apply text-gray-800 dark:text-gray-300 leading-relaxed;
 }
 
 .vocabulary-tag {
-  @apply px-3 py-1 bg-gray-100 dark:bg-corporate-navy text-gray-700 dark:text-gray-300 rounded-full text-sm;
+  @apply px-3 py-1 bg-gray-200 dark:bg-corporate-navy text-gray-800 dark:text-gray-300 rounded-full text-sm;
 }
 
 /* Highlighted vocabulary words */
@@ -113,52 +112,52 @@
 }
 
 /* Light mode styles */
-.word-of-day-card.dark, .word-of-day-card {
+.word-of-day-card {
   @apply bg-white dark:bg-corporate-darkblue/80 border border-gray-200 border-t-corporate-gold dark:border-t-corporate-gold shadow-md;
 }
 
-.module-card.dark, .module-card {
+.module-card {
   @apply bg-white dark:bg-corporate-darkblue/90 text-corporate-navy dark:text-white shadow-md;
 }
 
-.progress-stats-card.dark, .progress-stats-card {
+.progress-stats-card {
   @apply bg-white dark:bg-corporate-darkblue/80 shadow-md border border-gray-200;
 }
 
-.dark .module-card-text, .module-card-text {
-  @apply text-gray-700 dark:text-gray-300;
+.module-card-text {
+  @apply text-gray-800 dark:text-gray-300;
 }
 
-.dark .progress-text, .progress-text {
-  @apply text-gray-700 dark:text-gray-300;
+.progress-text {
+  @apply text-gray-800 dark:text-gray-300;
 }
 
-.dark .card-bg, .card-bg {
-  @apply bg-gray-50 dark:bg-corporate-darkgray;
+.card-bg {
+  @apply bg-gray-100 dark:bg-corporate-darkgray;
 }
 
 /* Cart specific styles */
-.dark .cart-item-title, .cart-item-title {
+.cart-item-title {
   @apply text-corporate-navy dark:text-white;
 }
 
-.dark .cart-item-price, .cart-item-price {
+.cart-item-price {
   @apply text-corporate-gold dark:text-corporate-gold;
 }
 
-.dark .cart-empty-message, .cart-empty-message {
-  @apply text-gray-600 dark:text-gray-300;
+.cart-empty-message {
+  @apply text-gray-800 dark:text-gray-300;
 }
 
-.dark .cart-total, .cart-total {
+.cart-total {
   @apply text-corporate-navy dark:text-white;
 }
 
-.dark .recommended-module, .recommended-module {
-  @apply bg-gray-50 dark:bg-corporate-darkblue/80 text-corporate-navy dark:text-white;
+.recommended-module {
+  @apply bg-gray-100 dark:bg-corporate-darkblue/80 text-corporate-navy dark:text-white;
 }
 
-.dark .recommended-price, .recommended-price {
+.recommended-price {
   @apply text-corporate-gold dark:text-corporate-gold;
 }
 

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Briefcase, LineChart, Megaphone, Lock, ClipboardList, Users, ShoppingCart, ArrowRight, CheckCircle } from 'lucide-react';
@@ -66,10 +67,10 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
         <h3 className="text-white font-semibold">{module.title}</h3>
       </div>
       <CardContent className="pt-4">
-        <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'} mb-4 module-card-text`}>{module.description}</p>
+        <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-800'} mb-4 module-card-text`}>{module.description}</p>
         <div className="flex justify-between text-sm mb-2">
-          <span className={`progress-text ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Progress</span>
-          <span className={`font-medium progress-text ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+          <span className={`progress-text ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>Progress</span>
+          <span className={`font-medium progress-text ${isDark ? 'text-gray-300' : 'text-gray-800'}`}>
             {module.progress} / {module.totalWords} words
           </span>
         </div>
@@ -80,11 +81,11 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
         {module.isPremium && (
           <div className="mt-4 flex items-center justify-between font-bold">
             <span className={isDark ? 'text-corporate-gold' : 'text-corporate-navy'}>${module.price?.toFixed(2)}</span>
-            {module.progress > 0 && <span className="text-xs text-gray-500">Progress will be saved</span>}
+            {module.progress > 0 && <span className="text-xs text-gray-600">Progress will be saved</span>}
           </div>
         )}
       </CardContent>
-      <CardFooter className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-50'} px-4 py-3`}>
+      <CardFooter className={`${isDark ? 'bg-corporate-darkgray' : 'bg-gray-100'} px-4 py-3`}>
         {module.isPremium ? (
           <Button 
             onClick={handleAddToCart}

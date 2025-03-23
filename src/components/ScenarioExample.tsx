@@ -33,11 +33,11 @@ const ScenarioExample = ({ scenario, context }: ScenarioExampleProps) => {
         <h3 className="text-lg font-bold text-corporate-navy dark:text-white">Business Scenario</h3>
       </div>
       
-      <div className="bg-gray-50 dark:bg-corporate-darkgray p-5 rounded-md border border-gray-200 dark:border-corporate-navy mb-4">
+      <div className="bg-gray-100 dark:bg-corporate-darkgray p-5 rounded-md border border-gray-200 dark:border-corporate-navy mb-4">
         <h3 className="text-lg font-bold text-corporate-navy dark:text-white mb-1">{scenario.title}</h3>
         <p className="text-sm text-gray-600 dark:text-gray-400 italic mb-4">{context || scenario.context}</p>
         
-        <div className="text-gray-700 dark:text-gray-300 text-base leading-relaxed">
+        <div className="text-gray-800 dark:text-gray-300 text-base leading-relaxed">
           {renderHighlightedContent()}
         </div>
       </div>
@@ -46,7 +46,7 @@ const ScenarioExample = ({ scenario, context }: ScenarioExampleProps) => {
         <h4 className="font-medium text-corporate-navy dark:text-white mb-2">Vocabulary Used:</h4>
         <div className="flex flex-wrap gap-2">
           {scenario.vocabularyHighlighted.map((word, index) => (
-            <div key={index} className="px-3 py-1 bg-gray-100 dark:bg-corporate-navy text-gray-700 dark:text-gray-300 rounded-full text-sm">
+            <div key={index} className="px-3 py-1 bg-gray-200 dark:bg-corporate-navy text-gray-800 dark:text-gray-300 rounded-full text-sm">
               {word}
             </div>
           ))}
