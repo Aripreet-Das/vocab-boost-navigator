@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { X, CreditCard, ShoppingCart } from 'lucide-react';
-import { moduleData } from '@/data/vocabularyData';
+import { toast } from "sonner";
 
 export interface CartItem {
   id: string;
@@ -19,6 +19,13 @@ interface CartProps {
 
 const Cart = ({ items, onRemoveItem, onCheckout }: CartProps) => {
   const totalPrice = items.reduce((sum, item) => sum + item.price, 0);
+
+  const handleRemoveItem = (id: string, title: string) => {
+    onRemoveItem(id);
+    toast.error(`${title} removed from cart`, {
+      icon: <X className="h-4 w-4" />,
+    });
+  };
 
   return (
     <Card className="shadow-md dark:bg-corporate-navy/90">
@@ -45,7 +52,7 @@ const Cart = ({ items, onRemoveItem, onCheckout }: CartProps) => {
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  onClick={() => onRemoveItem(item.id)}
+                  onClick={() => handleRemoveItem(item.id, item.title)}
                   className="text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
                 >
                   <X className="h-4 w-4" />

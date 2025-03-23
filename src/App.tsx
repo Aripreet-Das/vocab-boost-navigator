@@ -22,7 +22,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner
-          position="top-center"
+          position="top-right"
           expand={false}
           richColors
           closeButton

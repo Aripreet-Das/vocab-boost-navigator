@@ -6,7 +6,7 @@ import { moduleData } from '@/data/vocabularyData';
 import { toast } from "sonner";
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, CheckCircle } from 'lucide-react';
 
 const CartPage = () => {
   // In a real app, this would come from a global state or context
@@ -22,12 +22,16 @@ const CartPage = () => {
 
   const handleRemoveItem = (id: string) => {
     setCartItems(prev => prev.filter(item => item.id !== id));
-    toast.info("Item removed from cart");
+    // We're now showing the toast in the Cart component
   };
 
   const handleCheckout = () => {
-    toast.success("Purchase completed successfully!");
-    setCartItems([]);
+    if (cartItems.length > 0) {
+      toast.success("Purchase completed successfully!", {
+        icon: <CheckCircle className="h-4 w-4" />,
+      });
+      setCartItems([]);
+    }
     // In a real application, this would redirect to a payment processor
   };
 
@@ -45,9 +49,11 @@ const CartPage = () => {
           title: module.title, 
           price: module.price || 0 
         }]);
-        toast.success(`${module.title} added to cart`);
+        toast.success(`${module.title} added to cart`, {
+          icon: <CheckCircle className="h-4 w-4" />,
+        });
       } else {
-        toast.info("This module is already in your cart");
+        console.log("This module is already in your cart");
       }
     }
   };

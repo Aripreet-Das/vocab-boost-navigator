@@ -4,7 +4,7 @@ import Layout from '@/components/Layout';
 import ModuleCard from '@/components/ModuleCard';
 import { moduleData } from '@/data/vocabularyData';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Lock } from 'lucide-react';
+import { Lock, CheckCircle } from 'lucide-react';
 import { toast } from "sonner";
 
 const Modules = () => {
@@ -38,8 +38,10 @@ const Modules = () => {
           .map(m => ({ id: m.id, title: m.title, price: m.price || 0 }));
         
         localStorage.setItem('cart', JSON.stringify(cartData));
-        // Only show toast for successfully adding module to cart
-        toast.success(`${module.title} added to cart`);
+        // Show toast for adding module to cart
+        toast.success(`${module.title} added to cart`, {
+          icon: <CheckCircle className="h-4 w-4" />,
+        });
       } else {
         // Don't show toast for already-in-cart notification
         console.log("This module is already in your cart");

@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Briefcase, LineChart, Megaphone, Lock, ClipboardList, Users, ShoppingCart, ArrowRight } from 'lucide-react';
+import { Briefcase, LineChart, Megaphone, Lock, ClipboardList, Users, ShoppingCart, ArrowRight, CheckCircle } from 'lucide-react';
 import { Module } from '@/data/vocabularyData';
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
@@ -17,7 +16,6 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
-  // Helper function to render the correct icon
   const renderIcon = () => {
     switch(module.imageIcon) {
       case 'briefcase':
@@ -40,22 +38,15 @@ const ModuleCard = ({ module, onAddToCart }: ModuleCardProps) => {
   const progressPercentage = (module.progress / module.totalWords) * 100;
 
   const handleContinueLearning = () => {
-    if (module.isPremium) {
-      // Don't show toast for premium module warning
-      console.log("This is a premium module. Please purchase to continue.");
-    } else {
-      // Don't show toast for free module
-      console.log("Continuing with the free module!");
-    }
+    console.log("Continuing with the module:", module.title);
   };
 
   const handleAddToCart = () => {
     if (onAddToCart) {
       onAddToCart(module.id);
     } else {
-      // Only show toast for "Module Added to cart" message
-      toast.success(`${module.title} added to cart!`, {
-        description: `Price: $${module.price?.toFixed(2)}`,
+      toast.success(`${module.title} added to cart`, {
+        icon: <CheckCircle className="h-4 w-4" />,
       });
     }
   };
