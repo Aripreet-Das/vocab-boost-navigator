@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -15,7 +16,7 @@ const Footer = () => {
           </div>
           
           <div className="flex flex-col md:flex-row md:space-x-8 text-center md:text-left mb-4 md:mb-0">
-            <a href="#" className="text-sm hover:text-corporate-gold mb-2 md:mb-0">About</a>
+            <Link to="/about" className="text-sm hover:text-corporate-gold mb-2 md:mb-0">About</Link>
             <a href="#" className="text-sm hover:text-corporate-gold mb-2 md:mb-0">Privacy Policy</a>
             <a href="#" className="text-sm hover:text-corporate-gold mb-2 md:mb-0">Terms of Service</a>
             <a href="#" className="text-sm hover:text-corporate-gold">Contact</a>

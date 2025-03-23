@@ -11,6 +11,7 @@ import Scenarios from "./pages/Scenarios";
 import ProgressPage from "./pages/Progress";
 import CartPage from "./pages/CartPage";
 import ProfilePage from "./pages/ProfilePage";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -43,6 +44,7 @@ const App = () => (
             <Route path="/progress" element={<ProgressPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/about" element={<About />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
