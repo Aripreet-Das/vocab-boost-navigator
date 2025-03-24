@@ -61,18 +61,18 @@ const Scenarios = () => {
           <h1 className="text-3xl font-bold text-white mb-2">
             Business Scenarios
           </h1>
-          <p className="text-gray-400">
+          <p className="text-gray-200">
             See vocabulary in action with real-world business examples
           </p>
         </div>
         
         <Tabs defaultValue="all" className="mb-8">
           <TabsList className="mb-6 bg-corporate-darkblue border border-corporate-navy">
-            <TabsTrigger value="all" className="data-[state=active]:bg-corporate-navy data-[state=active]:text-white text-gray-400">All Scenarios</TabsTrigger>
-            <TabsTrigger value="meeting" className="data-[state=active]:bg-corporate-navy data-[state=active]:text-white text-gray-400">Meetings</TabsTrigger>
-            <TabsTrigger value="presentation" className="data-[state=active]:bg-corporate-navy data-[state=active]:text-white text-gray-400">Presentations</TabsTrigger>
-            <TabsTrigger value="email" className="data-[state=active]:bg-corporate-navy data-[state=active]:text-white text-gray-400">Emails</TabsTrigger>
-            <TabsTrigger value="report" className="data-[state=active]:bg-corporate-navy data-[state=active]:text-white text-gray-400">Reports</TabsTrigger>
+            <TabsTrigger value="all" className="data-[state=active]:bg-corporate-navy data-[state=active]:text-white text-gray-200">All Scenarios</TabsTrigger>
+            <TabsTrigger value="meeting" className="data-[state=active]:bg-corporate-navy data-[state=active]:text-white text-gray-200">Meetings</TabsTrigger>
+            <TabsTrigger value="presentation" className="data-[state=active]:bg-corporate-navy data-[state=active]:text-white text-gray-200">Presentations</TabsTrigger>
+            <TabsTrigger value="email" className="data-[state=active]:bg-corporate-navy data-[state=active]:text-white text-gray-200">Emails</TabsTrigger>
+            <TabsTrigger value="report" className="data-[state=active]:bg-corporate-navy data-[state=active]:text-white text-gray-200">Reports</TabsTrigger>
           </TabsList>
           
           <TabsContent value="all" className="mt-0">
